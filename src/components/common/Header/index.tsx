@@ -11,7 +11,6 @@ import SafeTokenWidget, { getSafeTokenAddress } from '@/components/common/SafeTo
 import NotificationCenter from '@/components/notification-center/NotificationCenter'
 import { AppRoutes } from '@/config/routes'
 import useChainId from '@/hooks/useChainId'
-import SafeLogo from '@/public/images/logo.svg'
 import Link from 'next/link'
 import useSafeAddress from '@/hooks/useSafeAddress'
 import BatchIndicator from '@/components/batch/BatchIndicator'
@@ -58,10 +57,14 @@ const Header = ({ onMenuToggle, onBatchToggle }: HeaderProps): ReactElement => {
         </IconButton>
       </div>
 
-      <div className={classnames(css.element, css.hideMobile, css.logo)}>
-        <Link href={logoHref} passHref>
-          <SafeLogo alt="Safe logo" />
-        </Link>
+      <div className={classnames(css.element, css.connectWallet, css.logo)}>
+        <Track label={OVERVIEW_LABELS.top_bar} {...OVERVIEW_EVENTS.OPEN_ONBOARD}>
+          <ConnectWallet />
+        </Track>
+      </div>
+
+      <div className={classnames(css.element, css.networkSelector, css.logo)}>
+        <NetworkSelector />
       </div>
 
       {showSafeToken && (
@@ -85,16 +88,6 @@ const Header = ({ onMenuToggle, onBatchToggle }: HeaderProps): ReactElement => {
           <WalletConnect />
         </div>
       )}
-
-      <div className={classnames(css.element, css.connectWallet)}>
-        <Track label={OVERVIEW_LABELS.top_bar} {...OVERVIEW_EVENTS.OPEN_ONBOARD}>
-          <ConnectWallet />
-        </Track>
-      </div>
-
-      <div className={classnames(css.element, css.networkSelector)}>
-        <NetworkSelector />
-      </div>
     </Paper>
   )
 }
