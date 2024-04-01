@@ -56,14 +56,15 @@ const Header = ({ onMenuToggle, onBatchToggle }: HeaderProps): ReactElement => {
         </IconButton>
       </div>
 
-      <div className={classnames(css.element, css.connectWallet, css.logo)}>
+      <div className={classnames(css.logo)}>
+      <div className={classnames(css.element, css.connectWallet)}>
         <Track label={OVERVIEW_LABELS.top_bar} {...OVERVIEW_EVENTS.OPEN_ONBOARD}>
           <ConnectWallet />
         </Track>
       </div>
-
-      <div className={classnames(css.element, css.networkSelector, css.logo)}>
+      <div className={classnames(css.element, css.networkSelector)}>
         <NetworkSelector />
+      </div>
       </div>
 
       {showSafeToken && (
