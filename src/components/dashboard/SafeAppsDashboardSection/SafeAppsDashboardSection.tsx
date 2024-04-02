@@ -24,6 +24,9 @@ const SafeAppsDashboardSection = () => {
       </Typography>
 
       <Grid container spacing={3}>
+        <Grid item xs={12} sm={6} md={4} xl={4}>
+          <ExploreSafeAppsCard />
+        </Grid>
         {rankedSafeApps.map((rankedSafeApp) => (
           <Grid key={rankedSafeApp.id} item xs={12} sm={6} md={4} xl={4}>
             <SafeAppCard
@@ -64,6 +67,21 @@ const ExploreSafeAppsCard = () => {
 
       <Button data-testid="explore-apps-btn" variant="contained" size="small">
         Explore Safe Apps
+      </Button>
+    </SafeAppCardContainer>
+  )
+}
+
+const ExploreSafeAppsCard2 = () => {
+  const router = useRouter()
+  const safeAppsLink = `${AppRoutes.apps.index}?safe=${router.query.safe}`
+
+  return (
+    <SafeAppCardContainer safeAppUrl={safeAppsLink} className={css.container}>
+      <ExploreSafeAppsIcon alt="Explore Safe Apps icon" />
+
+      <Button data-testid="explore-apps-btn" variant="contained" size="small">
+        Balance: $100
       </Button>
     </SafeAppCardContainer>
   )
