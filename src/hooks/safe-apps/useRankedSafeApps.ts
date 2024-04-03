@@ -4,7 +4,7 @@ import { rankSafeApps } from '@/services/safe-apps/track-app-usage-count'
 import { SafeAppsTag } from '@/config/constants'
 
 // number of ranked Safe Apps that we want to display
-const NUMBER_OF_SAFE_APPS = 5
+const NUMBER_OF_SAFE_APPS = 18
 
 const useRankedSafeApps = (safeApps: SafeAppData[], pinnedSafeApps: SafeAppData[]): SafeAppData[] => {
   return useMemo(() => {
