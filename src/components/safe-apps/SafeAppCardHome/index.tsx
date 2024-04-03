@@ -119,13 +119,6 @@ const SafeAppCardGridView = ({
           {safeApp.name}
         </Typography>
 
-        {/* Safe App Description */}
-        <Typography className={css.safeAppDescription} variant="body2" color="text.secondary">
-          {safeApp.description}
-        </Typography>
-
-        {/* Safe App Tags */}
-        <SafeAppTags tags={safeApp.tags} />
       </CardContent>
     </SafeAppCardContainer>
   )
