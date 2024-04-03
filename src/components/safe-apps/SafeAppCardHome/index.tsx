@@ -12,7 +12,6 @@ import type { NextRouter } from 'next/router'
 
 import type { UrlObject } from 'url'
 import SafeAppIconCard from '@/components/safe-apps/SafeAppIconCard'
-import SafeAppActionButtons from '@/components/safe-apps/SafeAppActionButtons'
 import { isOptimizedForBatchTransactions } from '@/components/safe-apps/utils'
 import { AppRoutes } from '@/config/routes'
 import BatchIcon from '@/public/images/apps/batch-icon.svg'
@@ -73,11 +72,7 @@ type SafeAppCardViewProps = {
   openPreviewDrawer?: (safeApp: SafeAppData) => void
 }
 
-const SafeAppCardGridView = ({
-  safeApp,
-  onClickSafeApp,
-  safeAppUrl,
-}: SafeAppCardViewProps) => {
+const SafeAppCardGridView = ({ safeApp, onClickSafeApp, safeAppUrl }: SafeAppCardViewProps) => {
   return (
     <SafeAppCardContainer safeAppUrl={safeAppUrl} onClickSafeApp={onClickSafeApp} height={'100%'}>
       {/* Safe App Header */}
