@@ -7,7 +7,7 @@ import { WidgetContainer } from '../styled'
 import { useSafeApps } from '@/hooks/safe-apps/useSafeApps'
 import useSafeAppPreviewDrawer from '@/hooks/safe-apps/useSafeAppPreviewDrawer'
 import SafeAppPreviewDrawer from '@/components/safe-apps/SafeAppPreviewDrawer'
-import SafeAppCard, { SafeAppCardContainer } from '@/components/safe-apps/SafeAppCard'
+import SafeAppCardHome, { SafeAppCardContainer } from '@/components/safe-apps/SafeAppCardHome'
 import { AppRoutes } from '@/config/routes'
 import ExploreSafeAppsIcon from '@/public/images/apps/explore.svg'
 
@@ -29,7 +29,7 @@ const SafeAppsDashboardSection = () => {
         </Grid>
         {rankedSafeApps.map((rankedSafeApp) => (
           <Grid key={rankedSafeApp.id} item xs={12} sm={6} md={4} xl={4}>
-            <SafeAppCard
+            <SafeAppCardHome
               safeApp={rankedSafeApp}
               onBookmarkSafeApp={togglePin}
               isBookmarked={pinnedSafeAppIds.has(rankedSafeApp.id)}
