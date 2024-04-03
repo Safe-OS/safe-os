@@ -13,7 +13,6 @@ import type { NextRouter } from 'next/router'
 import type { UrlObject } from 'url'
 import SafeAppIconCard from '@/components/safe-apps/SafeAppIconCard'
 import SafeAppActionButtons from '@/components/safe-apps/SafeAppActionButtons'
-import SafeAppTags from '@/components/safe-apps/SafeAppTags'
 import { isOptimizedForBatchTransactions } from '@/components/safe-apps/utils'
 import { AppRoutes } from '@/config/routes'
 import BatchIcon from '@/public/images/apps/batch-icon.svg'
@@ -118,7 +117,6 @@ const SafeAppCardGridView = ({
         <Typography className={css.safeAppTitle} gutterBottom variant="h5">
           {safeApp.name}
         </Typography>
-
       </CardContent>
     </SafeAppCardContainer>
   )
