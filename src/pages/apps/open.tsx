@@ -63,7 +63,7 @@ const SafeApps: NextPage<Props> = ({ safeAppUrl }) => {
   // appUrl is required to be present
   if (!isSafeAppsEnabled || !activeUrl || !router.isReady) return null
 
-  if (isWalletConnectEnabled && isWalletConnectSafeApp(appUrl)) {
+  if (isWalletConnectEnabled && isWalletConnectSafeApp(activeUrl)) {
     openWalletConnect()
     goToList()
     return null
