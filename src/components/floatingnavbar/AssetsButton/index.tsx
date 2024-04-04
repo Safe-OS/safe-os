@@ -8,7 +8,7 @@ const AssetsButton = ({ children }: { children: ReactNode }): ReactElement => {
 
   return (
     <>
-      <div data-testid="qr-modal-btn" onClick={() => setModalOpen(true)}>
+      <div onClick={() => setModalOpen(true)}>
         {children}
       </div>
 
