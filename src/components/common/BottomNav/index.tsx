@@ -6,10 +6,10 @@ import { useRouter } from 'next/router'
 import css from './styles.module.css'
 import { AppRoutes } from '@/config/routes'
 import packageJson from '../../../../package.json'
-import AppstoreButton from '../AppStoreButton'
 import ExternalLink from '../ExternalLink'
 import MUILink from '@mui/material/Link'
 import { HELP_CENTER_URL, IS_DEV, IS_OFFICIAL_HOST } from '@/config/constants'
+import AddressBookButton from '@/components/floatingnavbar/AddressBookButton/AddressBookModal'
 
 const footerPages = [AppRoutes.home]
 
@@ -76,7 +76,9 @@ const BottomNav = (): ReactElement | null => {
           </ExternalLink>
         </li>
         <li>
-          <AppstoreButton placement="footer" />
+          <AddressBookButton>
+            <Typography variant="caption">Address book</Typography>
+          </AddressBookButton>
         </li>
       </ul>
     </footer>
