@@ -9,7 +9,7 @@ import { BatchExecuteHoverProvider } from '@/components/transactions/BatchExecut
 import { usePendingTxsQueue, useShowUnsignedQueue } from '@/hooks/usePendingTxs'
 import RecoveryList from '@/features/recovery/components/RecoveryList'
 
-const Queue: NextPage = () => {
+const Queue: NextPage<{ showTabs: boolean }> = ({ showTabs = true }) => {
   const showPending = useShowUnsignedQueue()
 
   return (
@@ -19,10 +19,12 @@ const Queue: NextPage = () => {
       </Head>
 
       <BatchExecuteHoverProvider>
-        <TxHeader>
-          <BatchExecuteButton />
-        </TxHeader>
-
+        {
+          showTabs &&
+          <TxHeader>
+            <BatchExecuteButton />
+          </TxHeader>
+        }
         <main>
           <Box mb={4}>
             <RecoveryList />
