@@ -14,8 +14,10 @@ import { broadcastState, listenToBroadcast } from './broadcast'
 import { safeMessagesListener, txHistoryListener, txQueueListener } from './slices'
 import * as slices from './slices'
 import * as hydrate from './useHydrateStore'
+import { modalSlice } from './modalServiceSlice'
 
 const rootReducer = combineReducers({
+  [modalSlice.name]: modalSlice.reducer,
   [slices.chainsSlice.name]: slices.chainsSlice.reducer,
   [slices.safeInfoSlice.name]: slices.safeInfoSlice.reducer,
   [slices.balancesSlice.name]: slices.balancesSlice.reducer,
