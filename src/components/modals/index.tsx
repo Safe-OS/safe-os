@@ -7,7 +7,6 @@ import React from 'react'
 import ViewCreateSafe from "./CreateSafe";
 import ViewAppModal from "./ViewAppModal";
 import ViewAssetsModal from "./ViewAssetsModal";
-import ViewSettings from "./ViewSettingsModal";
 
 export const modalTypes = {
   viewSingleTransaction: 'viewSingleTransaction',
@@ -53,12 +52,6 @@ export const Modals = () => {
           open={activeModalState?.activeModal === modalTypes.assetsModals}
           onClose={() => dispatch(closeModal())}
           nfts={activeModalState?.modalProps?.nfts}
-        />
-      )}
-      {activeModalState?.activeModal === modalTypes.settingsModal && (
-        <ViewSettings
-          open={activeModalState?.activeModal === modalTypes.settingsModal}
-          onClose={() => dispatch(closeModal())}
         />
       )}
     </>
