@@ -20,18 +20,23 @@ import { FEATURES } from '@/utils/chains'
 import { openWalletConnect } from '@/features/walletconnect/components'
 import { isWalletConnectSafeApp } from '@/utils/gateway'
 
-const SafeApps: NextPage = () => {
+interface Props {
+   safeAppUrl?: string
+ }
+
+const SafeApps: NextPage<Props> = ({ safeAppUrl }) => {
   const chainId = useChainId()
   const router = useRouter()
   const appUrl = useSafeAppUrl()
   const { allSafeApps, remoteSafeAppsLoading } = useSafeApps()
   const safeAppData = allSafeApps.find((app) => app.url === appUrl)
-  const { safeApp, isLoading } = useSafeAppFromManifest(appUrl || '', chainId, safeAppData)
+  const activeUrl = safeAppUrl || appUrl
+  const { safeApp, isLoading } = useSafeAppFromManifest(activeUrl || '', chainId, safeAppData)
   const isSafeAppsEnabled = useHasFeature(FEATURES.SAFE_APPS)
   const isWalletConnectEnabled = useHasFeature(FEATURES.NATIVE_WALLETCONNECT)
 
   const { addPermissions, getPermissions, getAllowedFeaturesList } = useBrowserPermissions()
-  const origin = getOrigin(appUrl)
+  const origin = getOrigin(activeUrl)
   const {
     isModalVisible,
     isSafeAppInDefaultList,
@@ -56,7 +61,7 @@ const SafeApps: NextPage = () => {
   }, [router])
 
   // appUrl is required to be present
-  if (!isSafeAppsEnabled || !appUrl || !router.isReady) return null
+  if (!isSafeAppsEnabled || !activeUrl || !router.isReady) return null
 
   if (isWalletConnectEnabled && isWalletConnectSafeApp(appUrl)) {
     openWalletConnect()
@@ -90,7 +95,7 @@ const SafeApps: NextPage = () => {
 
   return (
     <SafeAppsErrorBoundary render={() => <SafeAppsLoadError onBackToApps={() => router.back()} />}>
-      <AppFrame appUrl={appUrl} allowedFeaturesList={getAllowedFeaturesList(origin)} safeAppFromManifest={safeApp} />
+      <AppFrame appUrl={activeUrl} allowedFeaturesList={getAllowedFeaturesList(origin)} safeAppFromManifest={safeApp} />
     </SafeAppsErrorBoundary>
   )
 }
