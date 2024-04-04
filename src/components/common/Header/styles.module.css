@@ -6,6 +6,7 @@
   align-items: center;
   position: relative;
   border-radius: 0 !important;
+  background: transparent;
 }
 
 .element {
@@ -42,6 +43,7 @@
 
 .logo {
   padding: var(--space-2);
+  display: flex;
 }
 
 .menuButton {
