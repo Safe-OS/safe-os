@@ -12,7 +12,7 @@ import TxFilterForm from '@/components/transactions/TxFilterForm'
 import TrustedToggle from '@/components/transactions/TrustedToggle'
 import { useTxFilter } from '@/utils/tx-history-filter'
 
-const History: NextPage = () => {
+const History: NextPage<{ showTabs: boolean }> = ({ showTabs = true }) => {
   const [filter] = useTxFilter()
 
   const [showFilter, setShowFilter] = useState(false)
@@ -28,13 +28,15 @@ const History: NextPage = () => {
         <title>{'Safe{Wallet} – Transaction history'}</title>
       </Head>
 
-      <TxHeader>
-        <TrustedToggle />
+      {showTabs &&
+        <TxHeader>
+          <TrustedToggle />
 
-        <Button variant="outlined" onClick={toggleFilter} size="small" endIcon={<ExpandIcon />}>
-          {filter?.type ?? 'Filter'}
-        </Button>
-      </TxHeader>
+          <Button variant="outlined" onClick={toggleFilter} size="small" endIcon={<ExpandIcon />}>
+            {filter?.type ?? 'Filter'}
+          </Button>
+        </TxHeader>
+      }
 
       <main>
         {showFilter && <TxFilterForm toggleFilter={toggleFilter} />}
