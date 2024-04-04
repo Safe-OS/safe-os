@@ -11,7 +11,7 @@ import { AppRoutes } from '@/config/routes'
 import { useCurrentChain } from '@/hooks/useChains'
 import { hasFeature } from '@/utils/chains'
 
-const Messages: NextPage = () => {
+const Messages: NextPage<{ showTabs: boolean }> = ({ showTabs = true }) => {
   const chain = useCurrentChain()
   const router = useRouter()
 
@@ -29,9 +29,11 @@ const Messages: NextPage = () => {
         <title>{'Safe{Wallet} – Messages'}</title>
       </Head>
 
-      <TxHeader>
-        <SignedMessagesHelpLink />
-      </TxHeader>
+      {showTabs &&
+        <TxHeader>
+          <SignedMessagesHelpLink />
+        </TxHeader>
+      }
 
       <main>
         <PaginatedMsgs />
