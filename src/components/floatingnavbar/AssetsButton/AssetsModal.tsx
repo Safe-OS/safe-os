@@ -1,5 +1,6 @@
 import { type ReactElement } from 'react'
 import { DialogContent } from '@mui/material'
+import ModalDialog from '@/components/common/ModalDialog'
 
 import AssetsTable from '@/components/balances/AssetsTable'
 import AssetsHeader from '@/components/balances/AssetsHeader'
