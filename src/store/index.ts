@@ -16,7 +16,6 @@ import * as slices from './slices'
 import * as hydrate from './useHydrateStore'
 
 const rootReducer = combineReducers({
-  [slices.modalSlice.name]: slices.modalSlice.reducer,
   [slices.chainsSlice.name]: slices.chainsSlice.reducer,
   [slices.safeInfoSlice.name]: slices.safeInfoSlice.reducer,
   [slices.balancesSlice.name]: slices.balancesSlice.reducer,
