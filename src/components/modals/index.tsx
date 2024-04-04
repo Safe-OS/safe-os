@@ -6,7 +6,6 @@ import ViewTransactionsModal from "./ViewTransactionsModal";
 import React from 'react'
 import ViewCreateSafe from "./CreateSafe";
 import ViewAppModal from "./ViewAppModal";
-import ViewAppsModal from "./ViewAppsModal";
 import ViewAssetsModal from "./ViewAssetsModal";
 import ViewSettings from "./ViewSettingsModal";
 
@@ -15,7 +14,6 @@ export const modalTypes = {
   viewTransactions: 'viewTransactionsModal',
   createSafe: 'createSafe',
   appModal: 'appModal',
-  appsModal: 'appsModal',
   assetsModals: 'assetsModals',
   settingsModal: 'settingsModal',
 }
@@ -47,12 +45,6 @@ export const Modals = () => {
       {activeModalState?.activeModal === modalTypes.appModal && (
         <ViewAppModal
           open={activeModalState?.activeModal === modalTypes.appModal}
-          onClose={() => dispatch(closeModal())}
-        />
-      )}
-      {activeModalState?.activeModal === modalTypes.appsModal && (
-        <ViewAppsModal
-          open={activeModalState?.activeModal === modalTypes.appsModal}
           onClose={() => dispatch(closeModal())}
         />
       )}
