@@ -5,19 +5,15 @@ import { ViewSingleTransactionModal } from "./ViewSingleTransaction";
 import ViewTransactionsModal from "./ViewTransactionsModal";
 import React from 'react'
 import ViewCreateSafe from "./CreateSafe";
-import { AddFolderModal } from "./AddFolderModal";
 import ViewAppModal from "./ViewAppModal";
 import ViewAppsModal from "./ViewAppsModal";
 import ViewAssetsModal from "./ViewAssetsModal";
 import ViewSettings from "./ViewSettingsModal";
-import { AddTxDescription } from "./AddDescription";
 
 export const modalTypes = {
-  addTransactionDescription: 'addTransactionDescription',
   viewSingleTransaction: 'viewSingleTransaction',
   viewTransactions: 'viewTransactionsModal',
   createSafe: 'createSafe',
-  addFolderModal: 'addFolderModal',
   appModal: 'appModal',
   appsModal: 'appsModal',
   assetsModals: 'assetsModals',
@@ -48,12 +44,6 @@ export const Modals = () => {
           onClose={() => dispatch(closeModal())}
         />
       )}
-      {activeModalState?.activeModal === modalTypes.addFolderModal && (
-        <AddFolderModal
-          open={activeModalState?.activeModal === modalTypes.addFolderModal}
-          onClose={() => dispatch(closeModal())}
-        />
-      )}
       {activeModalState?.activeModal === modalTypes.appModal && (
         <ViewAppModal
           open={activeModalState?.activeModal === modalTypes.appModal}
@@ -71,15 +61,6 @@ export const Modals = () => {
           open={activeModalState?.activeModal === modalTypes.assetsModals}
           onClose={() => dispatch(closeModal())}
           nfts={activeModalState?.modalProps?.nfts}
-        />
-      )}
-      {activeModalState?.activeModal === modalTypes.addTransactionDescription && (
-        <AddTxDescription
-          open={activeModalState?.activeModal === modalTypes.addTransactionDescription}
-          onClose={() => dispatch(closeModal())}
-          id={activeModalState?.modalProps?.id}
-          owner={activeModalState?.modalProps?.owner}
-          updateDescription={activeModalState?.modalProps?.updateDescription}
         />
       )}
       {activeModalState?.activeModal === modalTypes.settingsModal && (
