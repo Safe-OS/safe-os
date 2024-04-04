@@ -1,5 +1,5 @@
 {
-  "extends": ["next", "prettier", "plugin:prettier/recommended"],
+  "extends": ["next"],
   "rules": {
     "@next/next/no-img-element": "off",
     "@next/next/google-font-display": "off",
