@@ -12,7 +12,7 @@ import {
   Box,
   Typography
 } from '@mui/material'
-import Appearance from '@/components/settings/Appearance'
+import Appearance from '@/pages/settings/Appearance'
 import SetupControl from '@/components/settings/SetupControl'
 
 interface TabPanelProps {
