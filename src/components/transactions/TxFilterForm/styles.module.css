@@ -5,6 +5,13 @@
   border-width: 1px;
 }
 
+.filterWrapperModal {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  border-width: 1px;
+}
+
 @media (max-width: 599.95px) {
   .filterWrapper {
     position: relative;
