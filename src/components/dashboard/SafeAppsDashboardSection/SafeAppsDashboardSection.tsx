@@ -25,7 +25,7 @@ const SafeAppsDashboardSection = () => {
 
       <Grid container spacing={3}>
         {rankedSafeApps.map((rankedSafeApp) => (
-          <Grid key={rankedSafeApp.id} item xs={12} sm={6} md={4} xl={4}>
+          <Grid key={rankedSafeApp.id} item xs={4} sm={4} md={2} xl={2}>
             <SafeAppCardHome
               safeApp={rankedSafeApp}
               onBookmarkSafeApp={togglePin}
@@ -36,7 +36,7 @@ const SafeAppsDashboardSection = () => {
           </Grid>
         ))}
 
-        <Grid item xs={4} sm={4} md={2} xl={2}>
+        <Grid item xs={12} sm={6} md={4} xl={4}>
           <ExploreSafeAppsCard />
         </Grid>
       </Grid>
