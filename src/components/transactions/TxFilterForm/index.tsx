@@ -65,7 +65,7 @@ const getInitialFormValues = (filter: TxFilter | null): DefaultValues<TxFilterFo
     : defaultValues
 }
 
-const TxFilterForm = ({ toggleFilter }: { toggleFilter: () => void }): ReactElement => {
+const TxFilterForm = ({ toggleFilter, modal }: { toggleFilter: () => void, modal?: boolean }): ReactElement => {
   const [filter, setFilter] = useTxFilter()
   const chain = useCurrentChain()
 
@@ -117,7 +117,7 @@ const TxFilterForm = ({ toggleFilter }: { toggleFilter: () => void }): ReactElem
   }
 
   return (
-    <Paper elevation={0} variant="outlined" className={css.filterWrapper}>
+    <Paper elevation={0} variant="outlined" className={modal ? css.filterWrapperModal : css.filterWrapper}>
       <FormProvider {...formMethods}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container>
