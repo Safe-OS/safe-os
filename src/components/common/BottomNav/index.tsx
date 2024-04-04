@@ -9,7 +9,7 @@ import packageJson from '../../../../package.json'
 import ExternalLink from '../ExternalLink'
 import MUILink from '@mui/material/Link'
 import { HELP_CENTER_URL, IS_DEV, IS_OFFICIAL_HOST } from '@/config/constants'
-import AddressBookButton from '@/components/floatingnavbar/AddressBookButton/AddressBookModal'
+import AddressBookButton from '@/components/floatingnavbar/AddressBookButton'
 
 const footerPages = [AppRoutes.home]
 
