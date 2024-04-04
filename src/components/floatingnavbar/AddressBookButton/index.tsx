@@ -1,9 +1,9 @@
 import { type ReactElement, type ReactNode, useState, Suspense } from 'react'
 import dynamic from 'next/dynamic'
 
-const QrModal = dynamic(() => import('./AddressBookModal'))
+const AddressBook = dynamic(() => import('./AddressBookModal'))
 
-const QrCodeButton = ({ children }: { children: ReactNode }): ReactElement => {
+const AddressBookButton = ({ children }: { children: ReactNode }): ReactElement => {
   const [modalOpen, setModalOpen] = useState<boolean>(false)
 
   return (
@@ -14,11 +14,11 @@ const QrCodeButton = ({ children }: { children: ReactNode }): ReactElement => {
 
       {modalOpen && (
         <Suspense>
-          <QrModal onClose={() => setModalOpen(false)} />
+          <AddressBook onClose={() => setModalOpen(false)} />
         </Suspense>
       )}
     </>
   )
 }
 
-export default QrCodeButton
+export default AddressBookButton
