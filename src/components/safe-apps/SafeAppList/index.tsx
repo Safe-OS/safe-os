@@ -1,9 +1,12 @@
+import { useCallback } from 'react'
 import type { SafeAppData } from '@safe-global/safe-gateway-typescript-sdk'
 
 import SafeAppCard from '@/components/safe-apps/SafeAppCard'
 import AddCustomSafeAppCard from '@/components/safe-apps/AddCustomSafeAppCard'
+import SafeAppPreviewDrawer from '@/components/safe-apps/SafeAppPreviewDrawer'
 import SafeAppsListHeader from '@/components/safe-apps/SafeAppsListHeader'
 import SafeAppsZeroResultsPlaceholder from '@/components/safe-apps/SafeAppsZeroResultsPlaceholder'
+import useSafeAppPreviewDrawer from '@/hooks/safe-apps/useSafeAppPreviewDrawer'
 import css from './styles.module.css'
 import { Skeleton } from '@mui/material'
 import { useOpenedSafeApps } from '@/hooks/safe-apps/useOpenedSafeApps'
@@ -28,15 +31,22 @@ const SafeAppList = ({
   removeCustomApp,
   title,
   query,
-  modal
-}: SafeAppListProps & { modal?: boolean }) => {
+}: SafeAppListProps) => {
+  const { isPreviewDrawerOpen, previewDrawerApp, openPreviewDrawer, closePreviewDrawer } = useSafeAppPreviewDrawer()
   const { openedSafeAppIds } = useOpenedSafeApps()
 
   const showZeroResultsPlaceholder = query && safeAppsList.length === 0
 
-  const navigateToSafeApp = (safeAppUrl: string, router: any) => {
-    router.push(safeAppUrl)
-  }
+  const handleSafeAppClick = useCallback(
+    (safeApp: SafeAppData) => {
+      const isCustomApp = safeApp.id < 1
+
+      if (isCustomApp || openedSafeAppIds.includes(safeApp.id)) return
+
+      return () => openPreviewDrawer(safeApp)
+    },
+    [openPreviewDrawer, openedSafeAppIds],
+  )
 
   return (
     <>
@@ -63,12 +73,12 @@ const SafeAppList = ({
         {safeAppsList.map((safeApp) => (
           <li key={safeApp.id}>
             <SafeAppCard
-              modal={modal}
               safeApp={safeApp}
               isBookmarked={bookmarkedSafeAppsId?.has(safeApp.id)}
               onBookmarkSafeApp={onBookmarkSafeApp}
               removeCustomApp={removeCustomApp}
-              onClickSafeApp={navigateToSafeApp}
+              onClickSafeApp={handleSafeAppClick(safeApp)}
+              openPreviewDrawer={openPreviewDrawer}
             />
           </li>
         ))}
@@ -77,6 +87,14 @@ const SafeAppList = ({
       {/* Zero results placeholder */}
       {showZeroResultsPlaceholder && <SafeAppsZeroResultsPlaceholder searchQuery={query} />}
 
+      {/* Safe App Preview Drawer */}
+      <SafeAppPreviewDrawer
+        isOpen={isPreviewDrawerOpen}
+        safeApp={previewDrawerApp}
+        isBookmarked={previewDrawerApp && bookmarkedSafeAppsId?.has(previewDrawerApp.id)}
+        onClose={closePreviewDrawer}
+        onBookmark={onBookmarkSafeApp}
+      />
     </>
   )
 }
