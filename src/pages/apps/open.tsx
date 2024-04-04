@@ -21,8 +21,8 @@ import { openWalletConnect } from '@/features/walletconnect/components'
 import { isWalletConnectSafeApp } from '@/utils/gateway'
 
 interface Props {
-   safeAppUrl?: string
- }
+  safeAppUrl?: string
+}
 
 const SafeApps: NextPage<Props> = ({ safeAppUrl }) => {
   const chainId = useChainId()
