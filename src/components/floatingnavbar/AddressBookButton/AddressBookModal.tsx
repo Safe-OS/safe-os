@@ -1,4 +1,5 @@
 import { type ReactElement } from 'react'
+import { DialogContent } from '@mui/material'
 import AddressBookTable from '@/components/address-book/AddressBookTable'
 import ModalDialog from '@/components/common/ModalDialog'
 
