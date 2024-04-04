@@ -69,10 +69,10 @@ const ViewSettings: React.FC<{
           <SetupControl />
         </TabPanel>
         <TabPanel value={tab} index={1}>
-          <AppearanceControl />
+          <Appearance />
         </TabPanel>
         <TabPanel value={tab} index={2}>
-          <ModulesGroup />
+          <SafeModules />
         </TabPanel>
         <TabPanel value={tab} index={3}>
           <SpendingLimits />
