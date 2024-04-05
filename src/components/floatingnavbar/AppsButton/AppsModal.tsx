@@ -3,8 +3,6 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import debounce from 'lodash/debounce'
 
 import { useSafeApps } from '@/hooks/safe-apps/useSafeApps'
-import SafeAppsSDKLink from '@/components/safe-apps/SafeAppsSDKLink'
-import SafeAppsHeader from '@/components/safe-apps/SafeAppsHeader'
 import SafeAppList from '@/components/safe-apps/SafeAppList'
 import { AppRoutes } from '@/config/routes'
 import useSafeAppsFilters from '@/hooks/safe-apps/useSafeAppsFilters'
