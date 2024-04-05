@@ -1,6 +1,6 @@
 import ModalDialog from '@/components/common/ModalDialog'
 import React, { useState } from 'react'
-import Modules from '@/pages/settings/Modules'
+import ModulesPage from '@/components/floatingnavbar/SettingsPagesModal'
 import SafeAppsPermissions from '@/components/settings/SafeAppsPermissions'
 import SpendingLimits from '@/components/settings/SpendingLimits'
 import DataManagement from '@/components/settings/DataManagement'
@@ -72,7 +72,7 @@ const SettingsModal: React.FC<{
           <AppearanceControl />
         </TabPanel>
         <TabPanel value={tab} index={2}>
-          <Modules />
+          <ModulesPage />
         </TabPanel>
         <TabPanel value={tab} index={3}>
           <SpendingLimits />
