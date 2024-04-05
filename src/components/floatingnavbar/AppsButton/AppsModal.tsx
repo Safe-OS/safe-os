@@ -87,7 +87,6 @@ const AppsModal: React.FC<{
       <DialogContent sx={{ maxHeight: '90vh', overflow: 'auto' }}>
         <Tabs value={tab} onChange={handleChange} aria-label="folder tabs" variant="scrollable" scrollButtons="auto">
           <Tab label="All Apps" />
-          <Tab label="Bookmarked Apps" />
           <Tab label="My Custom Apps" />
         </Tabs>
         <TabPanel value={tab} index={0}>
@@ -121,9 +120,6 @@ const AppsModal: React.FC<{
         />
         </TabPanel>
         <TabPanel value={tab} index={1}>
-          <BookmarkedSafeApps />
-        </TabPanel>
-        <TabPanel value={tab} index={2}>
           <CustomSafeApps />
         </TabPanel>
       </DialogContent>
