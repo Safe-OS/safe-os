@@ -3,7 +3,6 @@ import { Box, DialogContent, Stack, Tab, Tabs, Typography } from '@mui/material'
 import ModalDialog from '@/components/common/ModalDialog'
 
 import AssetsTable from '@/components/balances/AssetsTable'
-import AssetsHeader from '@/components/balances/AssetsHeader'
 import useBalances from '@/hooks/useBalances'
 
 import NftCollections from '@/components/nfts/NftCollections'
@@ -61,11 +60,11 @@ const AssetsModal: React.FC<{
             <Tab label="NFTs" />
           </Tabs>
           {tabIndex === 0 &&
-            <AssetsHeader>
+            <Box display='flex' flexDirection='row' alignItems='center' gap={1} paddingTop={2}>
               <HiddenTokenButton showHiddenAssets={showHiddenAssets} toggleShowHiddenAssets={toggleShowHiddenAssets} />
               <TokenListSelect />
               <CurrencySelect />
-            </AssetsHeader>
+            </Box>
           }
         </Stack>
         <TabPanel value={tabIndex} index={0}>
