@@ -1,6 +1,6 @@
 import ModalDialog from '@/components/common/ModalDialog'
 import React, { useState } from 'react'
-import ModulesPage from '@/components/floatingnavbar/SettingsPagesModal'
+import ModulesPage from '@/components/floatingnavbar/SettingsPagesModal/ModulesPage'
 import SafeAppsPermissions from '@/components/settings/SafeAppsPermissions'
 import SpendingLimits from '@/components/settings/SpendingLimits'
 import DataManagement from '@/components/settings/DataManagement'
