@@ -13,7 +13,7 @@ import {
   Typography
 } from '@mui/material'
 import Appearance from '@/pages/settings/appearance'
-import SetupControl from '@/components/settings/SetupControl'
+import Setup from '@/pages/settings/setup'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -66,7 +66,7 @@ const SettingsModal: React.FC<{
         </Tabs>
 
         <TabPanel value={tab} index={0}>
-          <SetupControl />
+          <Setup />
         </TabPanel>
         <TabPanel value={tab} index={1}>
           <Appearance />
