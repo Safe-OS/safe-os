@@ -11,6 +11,7 @@ import MUILink from '@mui/material/Link'
 import { HELP_CENTER_URL, IS_DEV, IS_OFFICIAL_HOST } from '@/config/constants'
 import AddressBookButton from '@/components/floatingnavbar/AddressBookButton'
 import AssetsButton from '@/components/floatingnavbar/AssetsButton'
+import TransactionsButton from '@/components/floatingnavbar/TransactionsButton'
 
 const footerPages = [AppRoutes.home]
 
@@ -85,6 +86,11 @@ const BottomNav = (): ReactElement | null => {
           <AssetsButton>
             <Typography variant="caption">Assets</Typography>
           </AssetsButton>
+        </li>
+        <li>
+          <TransactionsButton>
+            <Typography variant="caption">Transactions</Typography>
+          </TransactionsButton>
         </li>
       </ul>
     </footer>
