@@ -13,6 +13,7 @@ import AddressBookButton from '@/components/floatingnavbar/AddressBookButton'
 import AssetsButton from '@/components/floatingnavbar/AssetsButton'
 import TransactionsButton from '@/components/floatingnavbar/TransactionsButton'
 import AppsButton from '@/components/floatingnavbar/AppsButton'
+import SettingsButton from '@/components/floatingnavbar/SettingsButton'
 
 const footerPages = [AppRoutes.home]
 
@@ -98,6 +99,11 @@ const BottomNav = (): ReactElement | null => {
             <Typography variant="caption">Apps</Typography>
           </AppsButton>
         </li>
+        <li>
+          <SettingsButton>
+            <Typography variant="caption">Apps</Typography>
+          </SettingsButton>
+        </li>      
       </ul>
     </footer>
   )
