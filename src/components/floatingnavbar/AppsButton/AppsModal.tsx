@@ -64,7 +64,6 @@ const AppsModal: React.FC<{
         </Tabs>
         <TabPanel value={tab} index={0}>
           <SafeAppList
-            modal={true}
             safeAppsList={remoteSafeApps}
             safeAppsListLoading={remoteSafeAppsLoading}
             bookmarkedSafeAppsId={bookmarkedSafeAppsId}
