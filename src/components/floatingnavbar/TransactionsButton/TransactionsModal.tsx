@@ -7,6 +7,7 @@ import useTxHistory from '@/hooks/useTxHistory'
 import Messages from '@/pages/transactions/messages'
 import Queue from '@/pages/transactions/queue'
 import { useTxFilter } from '@/utils/tx-history-filter'
+import TrustedToggle from '@/components/transactions/TrustedToggle'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { Box, Button, DialogContent, Stack, Tab, Tabs, Typography } from '@mui/material'
@@ -67,6 +68,7 @@ const TransactionsModal: React.FC<{
             <BatchExecuteButton />
           }
           {tabIndex === 1 &&
+            <TrustedToggle />
             <Button variant="outlined" onClick={toggleFilter} size="small" endIcon={<ExpandIcon />}>
               {filter?.type ?? 'Filter'}
             </Button>
