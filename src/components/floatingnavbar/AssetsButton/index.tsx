@@ -5,6 +5,7 @@ const AssetsModal = dynamic(() => import('./AssetsModal'))
 
 const AssetsButton = ({ children }: { children: ReactNode }): ReactElement => {
   const [modalOpen, setModalOpen] = useState<boolean>(false)
+  const nftsDefaultValue = false
 
   return (
     <>
@@ -14,7 +15,11 @@ const AssetsButton = ({ children }: { children: ReactNode }): ReactElement => {
 
       {modalOpen && (
         <Suspense>
-          <AssetsModal onClose={() => setModalOpen(false)} />
+          <AssetsModal 
+            open={modalOpen} 
+            nfts={nftsDefaultValue} 
+            onClose={() => setModalOpen(false)} 
+          />
         </Suspense>
       )}
     </>
