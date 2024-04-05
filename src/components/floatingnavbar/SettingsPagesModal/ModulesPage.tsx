@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import { Grid } from '@mui/material'
 import SafeModules from '@/components/settings/SafeModules'
 import TransactionGuards from '@/components/settings/TransactionGuards'
