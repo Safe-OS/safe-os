@@ -68,10 +68,12 @@ const TransactionsModal: React.FC<{
             <BatchExecuteButton />
           }
           {tabIndex === 1 &&
+            <>
             <TrustedToggle />
             <Button variant="outlined" onClick={toggleFilter} size="small" endIcon={<ExpandIcon />}>
               {filter?.type ?? 'Filter'}
             </Button>
+            </>
           }
           {tabIndex === 2 &&
             <SignedMessagesHelpLink />
