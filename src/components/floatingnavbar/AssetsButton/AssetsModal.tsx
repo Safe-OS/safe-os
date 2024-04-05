@@ -6,6 +6,7 @@ import AssetsTable from '@/components/balances/AssetsTable'
 import AssetsHeader from '@/components/balances/AssetsHeader'
 import useBalances from '@/hooks/useBalances'
 
+import NftCollections from '@/components/nfts/NftCollections'
 import PagePlaceholder from '@/components/common/PagePlaceholder'
 import NoAssetsIcon from '@/public/images/balances/no-assets.svg'
 import HiddenTokenButton from '@/components/balances/HiddenTokenButton'
