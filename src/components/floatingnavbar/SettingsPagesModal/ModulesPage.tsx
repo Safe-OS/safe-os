@@ -4,7 +4,7 @@ import SafeModules from '@/components/settings/SafeModules'
 import TransactionGuards from '@/components/settings/TransactionGuards'
 import { FallbackHandler } from '@/components/settings/FallbackHandler'
 
-const ModulesPage: NextPage = () => {
+const ModulesPage = () => {
   return (
     <>
         <Grid container direction="column" spacing={2}>
