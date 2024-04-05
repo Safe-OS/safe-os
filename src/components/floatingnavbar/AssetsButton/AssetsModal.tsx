@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { DialogContent } from '@mui/material'
 import { Box, DialogContent, Stack, Tab, Tabs, Typography } from '@mui/material'
 import ModalDialog from '@/components/common/ModalDialog'
 
