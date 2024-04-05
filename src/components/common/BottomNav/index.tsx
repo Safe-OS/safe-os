@@ -94,7 +94,7 @@ const BottomNav = (): ReactElement | null => {
           </TransactionsButton>
         </li>
         <li>
-          <AppsButotn>
+          <AppsButton>
             <Typography variant="caption">Apps</Typography>
           </AppsButton>
         </li>
