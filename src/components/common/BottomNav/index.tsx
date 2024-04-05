@@ -12,6 +12,7 @@ import { HELP_CENTER_URL, IS_DEV, IS_OFFICIAL_HOST } from '@/config/constants'
 import AddressBookButton from '@/components/floatingnavbar/AddressBookButton'
 import AssetsButton from '@/components/floatingnavbar/AssetsButton'
 import TransactionsButton from '@/components/floatingnavbar/TransactionsButton'
+import AppsButton from '@/components/floatingnavbar/AppsButton'
 
 const footerPages = [AppRoutes.home]
 
@@ -91,6 +92,11 @@ const BottomNav = (): ReactElement | null => {
           <TransactionsButton>
             <Typography variant="caption">Transactions</Typography>
           </TransactionsButton>
+        </li>
+        <li>
+          <AppsButotn>
+            <Typography variant="caption">Apps</Typography>
+          </AppsButton>
         </li>
       </ul>
     </footer>
