@@ -18,7 +18,6 @@ import {
   Typography,
   DialogContent
 } from '@mui/material'
-import BookmarkedSafeApps from '@/pages/apps/bookmarked'
 import CustomSafeApps from '@/pages/apps/custom'
 interface TabPanelProps {
   children?: React.ReactNode
