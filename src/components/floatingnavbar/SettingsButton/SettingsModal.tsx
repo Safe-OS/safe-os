@@ -12,7 +12,6 @@ import {
   Box,
   Typography
 } from '@mui/material'
-import AppearanceControl from '@/components/settings/AppearanceControl'
 import Appearance from '@/pages/settings/appearance'
 import SetupControl from '@/components/settings/SetupControl'
 
