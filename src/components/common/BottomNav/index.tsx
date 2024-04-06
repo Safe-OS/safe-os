@@ -71,7 +71,7 @@ const BottomNav = (): ReactElement | null => {
             </li>
           </>
         ) : (
-          <li>{'This is an unofficial distribution of Safe{Wallet}'}</li>
+          <></>
         )}
 
         <li>
@@ -101,7 +101,7 @@ const BottomNav = (): ReactElement | null => {
         </li>
         <li>
           <SettingsButton>
-            <Typography variant="caption">Apps</Typography>
+            <Typography variant="caption">Settings</Typography>
           </SettingsButton>
         </li>      
       </ul>
