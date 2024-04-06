@@ -4,8 +4,6 @@ import ChevronRight from '@mui/icons-material/ChevronRight'
 
 import ChainIndicator from '@/components/common/ChainIndicator'
 import SidebarHeader from '@/components/sidebar/SidebarHeader'
-import SidebarNavigation from '@/components/sidebar/SidebarNavigation'
-import SidebarFooter from '@/components/sidebar/SidebarFooter'
 
 import css from './styles.module.css'
 import { trackEvent, OVERVIEW_EVENTS } from '@/services/analytics'
@@ -39,15 +37,10 @@ const Sidebar = (): ReactElement => {
 
         <Divider />
 
-        {/* Nav menu */}
-        <SidebarNavigation />
-
         <Box flex={1} />
 
         <Divider flexItem />
 
-        {/* What's new + Need help? */}
-        <SidebarFooter />
       </div>
 
       <Drawer variant="temporary" anchor="left" open={isDrawerOpen} onClose={onDrawerToggle}>
