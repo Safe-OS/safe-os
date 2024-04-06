@@ -1,10 +1,12 @@
 import FirstSteps from '@/components/dashboard/FirstSteps'
 import useSafeInfo from '@/hooks/useSafeInfo'
+import Sidebar from '@/components/sidebar/Sidebar'
 import type { ReactElement } from 'react'
 import dynamic from 'next/dynamic'
 import { Grid } from '@mui/material'
 import PendingTxsList from '@/components/dashboard/PendingTxs/PendingTxsList'
 import Overview from '@/components/dashboard/Overview/Overview'
+import Sidebar from '@/components/sidebar/Sidebar'
 import SafeAppsDashboardSection from '@/components/dashboard/SafeAppsDashboardSection/SafeAppsDashboardSection'
 import CreationDialog from '@/components/dashboard/CreationDialog'
 import { useRouter } from 'next/router'
@@ -38,12 +40,16 @@ const Dashboard = (): ReactElement => {
 
         {safe.deployed && (
           <>
-            <Grid item xs={12} lg={6}>
+            <Grid item xs={12} lg={4}>
+              <Sidebar />
+            </Grid>
+            
+            <Grid item xs={12} lg={4}>
               <PendingTxsList />
             </Grid>
 
             {showRecoveryWidget ? (
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} lg={4}>
                 <RecoveryWidget />
               </Grid>
             ) : null}
