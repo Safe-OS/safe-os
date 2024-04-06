@@ -5,9 +5,7 @@ import dynamic from 'next/dynamic'
 import { Grid } from '@mui/material'
 import PendingTxsList from '@/components/dashboard/PendingTxs/PendingTxsList'
 import Overview from '@/components/dashboard/Overview/Overview'
-import { FeaturedApps } from '@/components/dashboard/FeaturedApps/FeaturedApps'
 import SafeAppsDashboardSection from '@/components/dashboard/SafeAppsDashboardSection/SafeAppsDashboardSection'
-import GovernanceSection from '@/components/dashboard/GovernanceSection/GovernanceSection'
 import CreationDialog from '@/components/dashboard/CreationDialog'
 import { useRouter } from 'next/router'
 import { CREATION_MODAL_QUERY_PARM } from '../new-safe/create/logic'
@@ -49,14 +47,6 @@ const Dashboard = (): ReactElement => {
                 <RecoveryWidget />
               </Grid>
             ) : null}
-
-            <Grid item xs={12} lg={showRecoveryWidget ? 12 : 6}>
-              <FeaturedApps stackedLayout={!showRecoveryWidget} />
-            </Grid>
-
-            <Grid item xs={12}>
-              <GovernanceSection />
-            </Grid>
 
             <Grid item xs={12}>
               <SafeAppsDashboardSection />
