@@ -89,7 +89,7 @@ const BottomNav = (): ReactElement | null => {
         </li>
         <li>
           <AssetsButton>
-            <Tooltip title="Assets" placement="top">
+            <Tooltip title="Assets" placement="top" arrow>
               <Image src={AssetsIcon} alt="Assets Icon" width={60} height={60} />
             </Tooltip>
           </AssetsButton>
