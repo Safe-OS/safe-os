@@ -1,6 +1,7 @@
 import type { ReactElement, ReactNode } from 'react'
 import { SvgIcon, Typography } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub'
+import Tooltip from '@mui/material/Tooltip'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import css from './styles.module.css'
@@ -88,7 +89,9 @@ const BottomNav = (): ReactElement | null => {
         </li>
         <li>
           <AssetsButton>
-            <Image src={AssetsIcon} alt="Assets Icon" width={60} height={60} />
+            <Tooltip title="Assets" placement="top">
+              <Image src={AssetsIcon} alt="Assets Icon" width={60} height={60} />
+            </Tooltip>
           </AssetsButton>
         </li>
         <li>
