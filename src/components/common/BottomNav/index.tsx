@@ -87,7 +87,7 @@ const BottomNav = (): ReactElement | null => {
         </li>
         <li>
           <AssetsButton>
-            <SvgIcon component={AssetsIcon} inheritViewBox />
+            <SvgIcon component={AssetsIcon} width={60} height={60} />
           </AssetsButton>
         </li>
         <li>
