@@ -14,7 +14,7 @@ import AssetsButton from '@/components/floatingnavbar/AssetsButton'
 import TransactionsButton from '@/components/floatingnavbar/TransactionsButton'
 import AppsButton from '@/components/floatingnavbar/AppsButton'
 import SettingsButton from '@/components/floatingnavbar/SettingsButton'
-import AssetsIcon from '@/public/images/sidebar/assets.svg'
+import AssetsIcon from '@/public/images/safe-logo-green.png'
 
 const footerPages = [AppRoutes.home]
 
