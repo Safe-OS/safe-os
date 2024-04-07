@@ -38,18 +38,16 @@ const SafeAppIconCard = ({
   alt,
   width = 60,
   height = 60,
-  borderRadius = 14,
   fallback = APP_LOGO_FALLBACK_IMAGE,
 }: {
   src: string
   alt: string
   width?: number
   height?: number
-  borderRadius?: number
   fallback?: string
 }): ReactElement => {
   if (_isSafeSrc(src)) {
-    return <ImageFallback src={src} alt={alt} width={width} height={height} borderRadius={borderRadius} fallbackSrc={fallback} />
+    return <ImageFallback src={src} alt={alt} width={width} height={height} fallbackSrc={fallback} />
   }
 
   return (
@@ -60,7 +58,7 @@ const SafeAppIconCard = ({
       referrerPolicy="strict-origin"
       width={width}
       height={height}
-      style={{ pointerEvents: 'none', border: 0 }}
+      style={{ pointerEvents: 'none', border: 0, borderRadius: '14px' }}
       tabIndex={-1}
       loading="lazy"
     />
