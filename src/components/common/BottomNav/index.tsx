@@ -15,6 +15,7 @@ import TransactionsButton from '@/components/floatingnavbar/TransactionsButton'
 import AppsButton from '@/components/floatingnavbar/AppsButton'
 import SettingsButton from '@/components/floatingnavbar/SettingsButton'
 import AssetsIcon from '@/public/images/safe-logo-green.png'
+import Image from 'next/image'
 
 const footerPages = [AppRoutes.home]
 
@@ -87,7 +88,7 @@ const BottomNav = (): ReactElement | null => {
         </li>
         <li>
           <AssetsButton>
-            <SvgIcon component={AssetsIcon} width={60} height={60} />
+            <Image src={AssetsIcon} alt="Assets Icon" width={60} height={60} />
           </AssetsButton>
         </li>
         <li>
