@@ -18,22 +18,12 @@
   align-items: center;
   border-radius: 31px;
   padding: 26px;
-  background: white;
+  background: #ffffff63;
 }
 
 .container li {
   padding: 0;
   margin: 0;
-}
-
-.container li:not(:last-of-type):after {
-  content: '|';
-  margin-left: var(--space-2);
-}
-
-.container li a:not([href]) {
-  text-decoration: none;
-  pointer-events: none;
 }
 
 @media (max-width: 599.95px) {
