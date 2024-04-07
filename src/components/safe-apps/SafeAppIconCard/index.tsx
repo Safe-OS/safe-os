@@ -38,7 +38,7 @@ const SafeAppIconCard = ({
   alt,
   width = 60,
   height = 60,
-  borderRadius: 14,
+  borderRadius = 14,
   fallback = APP_LOGO_FALLBACK_IMAGE,
 }: {
   src: string
