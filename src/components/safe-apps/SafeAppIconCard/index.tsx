@@ -36,18 +36,20 @@ export const _isSafeSrc = (src: string) => {
 const SafeAppIconCard = ({
   src,
   alt,
-  width = 48,
-  height = 48,
+  width = 60,
+  height = 60,
+  borderRadius: 14,
   fallback = APP_LOGO_FALLBACK_IMAGE,
 }: {
   src: string
   alt: string
   width?: number
   height?: number
+  borderRadius?: number
   fallback?: string
 }): ReactElement => {
   if (_isSafeSrc(src)) {
-    return <ImageFallback src={src} alt={alt} width={width} height={height} fallbackSrc={fallback} />
+    return <ImageFallback src={src} alt={alt} width={width} height={height} borderRadius={borderRadius} fallbackSrc={fallback} />
   }
 
   return (
