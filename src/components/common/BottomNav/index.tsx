@@ -14,6 +14,7 @@ import AssetsButton from '@/components/floatingnavbar/AssetsButton'
 import TransactionsButton from '@/components/floatingnavbar/TransactionsButton'
 import AppsButton from '@/components/floatingnavbar/AppsButton'
 import SettingsButton from '@/components/floatingnavbar/SettingsButton'
+import AssetsIcon from '@/public/images/sidebar/assets.svg'
 
 const footerPages = [AppRoutes.home]
 
@@ -86,7 +87,7 @@ const BottomNav = (): ReactElement | null => {
         </li>
         <li>
           <AssetsButton>
-            <Typography variant="caption">Assets</Typography>
+            <SvgIcon component={AssetsIcon} inheritViewBox />
           </AssetsButton>
         </li>
         <li>
