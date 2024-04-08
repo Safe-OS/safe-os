@@ -126,20 +126,20 @@ type SafeAppCardContainerProps = {
 
 export const SafeAppCardContainer = ({
   children,
-  safeAppUrl,
   onClickSafeApp,
   height,
   className,
 }: SafeAppCardContainerProps) => {
-const handleSafeAppClick = (safeAppUrl: string) => {
-  setSelectedSafeAppUrl(safeAppUrl)
-  setIsModalOpen(true)
-}
+  const handleClickSafeApp = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    if (onClickSafeApp) {
+      onClickSafeApp()
+    }
   }
 
   return (
-      <Card onClick={onClickSafeApp} className={classNames(css.safeAppContainer, className)} sx={{ height }}>
-        {children}
-      </Card>
+    <Card className={classNames(css.safeAppContainer, className)} sx={{ height }} onClick={handleClickSafeApp}>
+      {children}
+    </Card>
   )
 }
