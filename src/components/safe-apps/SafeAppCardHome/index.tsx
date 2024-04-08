@@ -6,10 +6,11 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { resolveHref } from 'next/dist/client/resolve-href'
 import classNames from 'classnames'
-import type { ReactNode, SyntheticEvent } from 'react'
+import type { useState, ReactNode, SyntheticEvent } from 'react'
 import type { SafeAppData } from '@safe-global/safe-gateway-typescript-sdk'
 import type { NextRouter } from 'next/router'
 
+import ViewAppModal from '@/components/modals/ViewAppModal'
 import type { UrlObject } from 'url'
 import SafeAppIconCard from '@/components/safe-apps/SafeAppIconCard'
 import { isOptimizedForBatchTransactions } from '@/components/safe-apps/utils'
@@ -35,19 +36,33 @@ const SafeAppCardHome = ({
   openPreviewDrawer,
 }: SafeAppCardProps) => {
   const router = useRouter()
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedSafeAppUrl, setSelectedSafeAppUrl] = useState('')
 
   const safeAppUrl = getSafeAppUrl(router, safeApp.url)
 
+  const handleCardClick = () => {
+    setSelectedSafeAppUrl(safeApp.url)
+    setIsModalOpen(true)
+  }
+
   return (
+    <>
     <SafeAppCardGridView
       safeApp={safeApp}
       safeAppUrl={safeAppUrl}
       isBookmarked={isBookmarked}
       onBookmarkSafeApp={onBookmarkSafeApp}
       removeCustomApp={removeCustomApp}
-      onClickSafeApp={onClickSafeApp}
+      onClickSafeApp={handleCardClick}
       openPreviewDrawer={openPreviewDrawer}
     />
+          <ViewAppModal
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        url={selectedSafeAppUrl} // The URL to open in the modal
+      />
+    </>
   )
 }
 
@@ -116,18 +131,15 @@ export const SafeAppCardContainer = ({
   height,
   className,
 }: SafeAppCardContainerProps) => {
-  const handleClickSafeApp = (event: SyntheticEvent) => {
-    if (onClickSafeApp) {
-      event.preventDefault()
-      onClickSafeApp()
-    }
+const handleSafeAppClick = (safeAppUrl: string) => {
+  setSelectedSafeAppUrl(safeAppUrl)
+  setIsModalOpen(true)
+}
   }
 
   return (
-    <Link href={safeAppUrl} passHref rel="noreferrer" onClick={handleClickSafeApp}>
-      <Card className={classNames(css.safeAppContainer, className)} sx={{ height }}>
+      <Card onClick={onClickSafeApp} className={classNames(css.safeAppContainer, className)} sx={{ height }}>
         {children}
       </Card>
-    </Link>
   )
 }
