@@ -50,6 +50,7 @@ const SafeAppList = ({
       setSelectedAppUrl(safeApp.url)
       setIsAppModalOpen(true)
     }
+  }
   [openedSafeAppIds],
 )
 
