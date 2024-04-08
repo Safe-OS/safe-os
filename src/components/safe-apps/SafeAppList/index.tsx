@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import type { SafeAppData } from '@safe-global/safe-gateway-typescript-sdk'
 
 import SafeAppCard from '@/components/safe-apps/SafeAppCard'
@@ -34,6 +34,8 @@ const SafeAppList = ({
 }: SafeAppListProps) => {
   const { isPreviewDrawerOpen, previewDrawerApp, openPreviewDrawer, closePreviewDrawer } = useSafeAppPreviewDrawer()
   const { openedSafeAppIds } = useOpenedSafeApps()
+  const [isAppModalOpen, setIsAppModalOpen] = useState(false)
+  const [selectedAppUrl, setSelectedAppUrl] = useState('')
 
   const showZeroResultsPlaceholder = query && safeAppsList.length === 0
 
@@ -43,10 +45,13 @@ const SafeAppList = ({
 
       if (isCustomApp || openedSafeAppIds.includes(safeApp.id)) return
 
-      return () => openPreviewDrawer(safeApp)
-    },
-    [openPreviewDrawer, openedSafeAppIds],
-  )
+    return () => {
+      // Set the selected app URL and open the modal
+      setSelectedAppUrl(safeApp.url)
+      setIsAppModalOpen(true)
+    }
+  [openedSafeAppIds],
+)
 
   return (
     <>
@@ -95,6 +100,12 @@ const SafeAppList = ({
         onClose={closePreviewDrawer}
         onBookmark={onBookmarkSafeApp}
       />
+
+        <ViewAppModal
+    open={isAppModalOpen}
+    onClose={() => setIsAppModalOpen(false)}
+    url={selectedAppUrl}
+  />
     </>
   )
 }
