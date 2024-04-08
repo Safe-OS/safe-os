@@ -89,35 +89,35 @@ const BottomNav = (): ReactElement | null => {
         <li>
           <AddressBookButton>
             <Tooltip title="Address book" placement="top" arrow>
-              <Image src={AddressBookNavIcon} alt="Address book Icon" width={60} height={60} borderRadius={14} />
+              <Image src={AddressBookNavIcon} alt="Address book Icon" width={60} height={60} />
             </Tooltip>
           </AddressBookButton>
         </li>
         <li>
           <AssetsButton>
             <Tooltip title="Assets" placement="top" arrow>
-              <Image src={AssetsNavIcon} alt="Assets Icon" width={60} height={60} borderRadius={14} />
+              <Image src={AssetsNavIcon} alt="Assets Icon" width={60} height={60} />
             </Tooltip>
           </AssetsButton>
         </li>
         <li>
           <TransactionsButton>
             <Tooltip title="Transactions" placement="top" arrow>
-              <Image src={TransactionsNavIcon} alt="Transactions Icon" width={60} height={60} borderRadius={14} />
+              <Image src={TransactionsNavIcon} alt="Transactions Icon" width={60} height={60} />
             </Tooltip>
           </TransactionsButton>
         </li>
         <li>
           <AppsButton>
             <Tooltip title="Apps" placement="top" arrow>
-              <Image src={AppsNavIcon} alt="Apps Icon" width={60} height={60} borderRadius={14} />
+              <Image src={AppsNavIcon} alt="Apps Icon" width={60} height={60} />
             </Tooltip>
           </AppsButton>
         </li>
         <li>
           <SettingsButton>
             <Tooltip title="Settings" placement="top" arrow>
-              <Image src={SettingsNavIcon} alt="Settings Icon" width={60} height={60} borderRadius={14} />
+              <Image src={SettingsNavIcon} alt="Settings Icon" width={60} height={60} />
             </Tooltip>
           </SettingsButton>
         </li>      
