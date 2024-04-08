@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Card from '@mui/material/Card'
@@ -6,7 +7,7 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { resolveHref } from 'next/dist/client/resolve-href'
 import classNames from 'classnames'
-import type { useState, ReactNode, SyntheticEvent } from 'react'
+import type { ReactNode, SyntheticEvent } from 'react'
 import type { SafeAppData } from '@safe-global/safe-gateway-typescript-sdk'
 import type { NextRouter } from 'next/router'
 
