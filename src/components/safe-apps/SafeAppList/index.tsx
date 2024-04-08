@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import type { SafeAppData } from '@safe-global/safe-gateway-typescript-sdk'
 
+import ViewAppModal from '@/components/modals/ViewAppModal'
 import SafeAppCard from '@/components/safe-apps/SafeAppCard'
 import AddCustomSafeAppCard from '@/components/safe-apps/AddCustomSafeAppCard'
 import SafeAppPreviewDrawer from '@/components/safe-apps/SafeAppPreviewDrawer'
