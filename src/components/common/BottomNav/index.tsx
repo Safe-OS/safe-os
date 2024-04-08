@@ -15,7 +15,7 @@ import AssetsButton from '@/components/floatingnavbar/AssetsButton'
 import TransactionsButton from '@/components/floatingnavbar/TransactionsButton'
 import AppsButton from '@/components/floatingnavbar/AppsButton'
 import SettingsButton from '@/components/floatingnavbar/SettingsButton'
-import AssetsIcon from '@/public/images/safe-logo-green.png'
+import AssetsNavIcon from '@/public/images/sidebar/AssetsNav.png'
 import Image from 'next/image'
 
 const footerPages = [AppRoutes.home]
@@ -90,7 +90,7 @@ const BottomNav = (): ReactElement | null => {
         <li>
           <AssetsButton>
             <Tooltip title="Assets" placement="top" arrow>
-              <Image src={AssetsIcon} alt="Assets Icon" width={60} height={60} />
+              <Image src={AssetsNavIcon} alt="Assets Icon" width={60} height={60} />
             </Tooltip>
           </AssetsButton>
         </li>
