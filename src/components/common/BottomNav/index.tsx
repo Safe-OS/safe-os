@@ -16,6 +16,10 @@ import TransactionsButton from '@/components/floatingnavbar/TransactionsButton'
 import AppsButton from '@/components/floatingnavbar/AppsButton'
 import SettingsButton from '@/components/floatingnavbar/SettingsButton'
 import AssetsNavIcon from '@/public/images/sidebar/AssetsNav.png'
+import AppsNavIcon from '@/public/images/sidebar/AppsNav.png'
+import SettingsNavIcon from '@/public/images/sidebar/SettingsNav.png'
+import AddressBookNavIcon from '@/public/images/sidebar/AddressBookNav.png'
+import TransactionsNavIcon from '@/public/images/sidebar/TransactionsNav.png'
 import Image from 'next/image'
 
 const footerPages = [AppRoutes.home]
@@ -84,29 +88,37 @@ const BottomNav = (): ReactElement | null => {
         </li>
         <li>
           <AddressBookButton>
-            <Typography variant="caption">Address book</Typography>
+            <Tooltip title="Address book" placement="top" arrow>
+              <Image src={AddressBookNavIcon} alt="Address book Icon" width={60} height={60} borderRadius={14} />
+            </Tooltip>
           </AddressBookButton>
         </li>
         <li>
           <AssetsButton>
             <Tooltip title="Assets" placement="top" arrow>
-              <Image src={AssetsNavIcon} alt="Assets Icon" width={60} height={60} />
+              <Image src={AssetsNavIcon} alt="Assets Icon" width={60} height={60} borderRadius={14} />
             </Tooltip>
           </AssetsButton>
         </li>
         <li>
           <TransactionsButton>
-            <Typography variant="caption">Transactions</Typography>
+            <Tooltip title="Transactions" placement="top" arrow>
+              <Image src={TransactionsNavIcon} alt="Transactions Icon" width={60} height={60} borderRadius={14} />
+            </Tooltip>
           </TransactionsButton>
         </li>
         <li>
           <AppsButton>
-            <Typography variant="caption">Apps</Typography>
+            <Tooltip title="Apps" placement="top" arrow>
+              <Image src={AppsNavIcon} alt="Apps Icon" width={60} height={60} borderRadius={14} />
+            </Tooltip>
           </AppsButton>
         </li>
         <li>
           <SettingsButton>
-            <Typography variant="caption">Settings</Typography>
+            <Tooltip title="Settings" placement="top" arrow>
+              <Image src={SettingsNavIcon} alt="Settings Icon" width={60} height={60} borderRadius={14} />
+            </Tooltip>
           </SettingsButton>
         </li>      
       </ul>
