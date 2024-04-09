@@ -1,10 +1,7 @@
 import TokenAmount from '@/components/common/TokenAmount'
 import CounterfactualStatusButton from '@/features/counterfactual/CounterfactualStatusButton'
 import { type ReactElement, useMemo } from 'react'
-import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
-import Skeleton from '@mui/material/Skeleton'
-import Tooltip from '@mui/material/Tooltip'
+import { Typography, IconButton, Skeleton, Tooltip, Divider } from '@mui/material'
 
 import { formatCurrency } from '@/utils/formatNumber'
 import useSafeInfo from '@/hooks/useSafeInfo'
@@ -85,6 +82,8 @@ const SafeHeader = (): ReactElement => {
             </Typography>
           </div>
         </div>
+
+        <Divider />
 
         <div className={css.iconButtons}>
           <Track {...OVERVIEW_EVENTS.SHOW_QR} label="sidebar">
