@@ -1,16 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import SettingsHeader from '@/components/settings/SettingsHeader'
 import EnvironmentVariables from '@/components/settings/EnvironmentVariables'
 
 const EnvironmentVariablesPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe{Wallet} – Settings – Environment variables'}</title>
+        <title>{'SafeOS – Settings – Environment variables'}</title>
       </Head>
-
-      <SettingsHeader />
 
       <main>
         <EnvironmentVariables />
