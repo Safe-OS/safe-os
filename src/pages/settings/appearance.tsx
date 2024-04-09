@@ -35,8 +35,6 @@ const Appearance: NextPage = () => {
         <title>{'Safe{Wallet} – Settings – Appearance'}</title>
       </Head>
 
-      <SettingsHeader />
-
       <main>
         <Paper sx={{ p: 4 }}>
           <Grid container spacing={3}>
