@@ -35,17 +35,6 @@ const SafeApps: NextPage<Props> = ({ safeAppUrl }) => {
 
   const { addPermissions, getPermissions, getAllowedFeaturesList } = useBrowserPermissions()
   const origin = getOrigin(activeUrl)
-  const {
-    isPermissionsReviewCompleted,
-    onComplete,
-  } = useSafeAppsInfoModal({
-    url: origin,
-    safeApp: safeAppData,
-    permissions: safeApp?.safeAppsPermissions || [],
-    addPermissions,
-    getPermissions,
-    remoteSafeAppsLoading,
-  })
 
   const goToList = useCallback(() => {
     router.push({
