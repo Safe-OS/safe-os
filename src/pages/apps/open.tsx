@@ -5,8 +5,6 @@ import { Box, CircularProgress } from '@mui/material'
 
 import { useSafeAppUrl } from '@/hooks/safe-apps/useSafeAppUrl'
 import { useSafeApps } from '@/hooks/safe-apps/useSafeApps'
-import SafeAppsInfoModal from '@/components/safe-apps/SafeAppsInfoModal'
-import useSafeAppsInfoModal from '@/components/safe-apps/SafeAppsInfoModal/useSafeAppsInfoModal'
 import SafeAppsErrorBoundary from '@/components/safe-apps/SafeAppsErrorBoundary'
 import SafeAppsLoadError from '@/components/safe-apps/SafeAppsErrorBoundary/SafeAppsLoadError'
 import AppFrame from '@/components/safe-apps/AppFrame'
@@ -37,18 +35,6 @@ const SafeApps: NextPage<Props> = ({ safeAppUrl }) => {
 
   const { addPermissions, getPermissions, getAllowedFeaturesList } = useBrowserPermissions()
   const origin = getOrigin(activeUrl)
-  const {
-    isModalVisible,
-    isPermissionsReviewCompleted,
-    onComplete,
-  } = useSafeAppsInfoModal({
-    url: origin,
-    safeApp: safeAppData,
-    permissions: safeApp?.safeAppsPermissions || [],
-    addPermissions,
-    getPermissions,
-    remoteSafeAppsLoading,
-  })
 
   const goToList = useCallback(() => {
     router.push({
@@ -64,19 +50,6 @@ const SafeApps: NextPage<Props> = ({ safeAppUrl }) => {
     openWalletConnect()
     goToList()
     return null
-  }
-
-  if (isModalVisible) {
-    return (
-      <SafeAppsInfoModal
-        key={isLoading ? 'loading' : 'loaded'}
-        onCancel={goToList}
-        onConfirm={onComplete}
-        features={safeApp.safeAppsPermissions}
-        appUrl={safeApp.url}
-        isPermissionsReviewCompleted={isPermissionsReviewCompleted}
-      />
-    )
   }
 
   if (isLoading) {
