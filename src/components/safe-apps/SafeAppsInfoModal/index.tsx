@@ -106,8 +106,7 @@ const SafeAppsInfoModal = ({
             backgroundColor: palette.background.paper,
             borderRadius: '8px 8px 0 0',
             '> .MuiLinearProgress-bar': {
-              backgroundColor:
-                progressValue === 100 && shouldShowUnknownAppWarning ? palette.warning.main : palette.primary.main,
+              backgroundColor: palette.primary.main,
               borderRadius: '8px',
             },
           })}
