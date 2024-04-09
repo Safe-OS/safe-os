@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import type { NextPage } from 'next'
 
-import SettingsHeader from '@/components/settings/SettingsHeader'
 import { PushNotifications } from '@/components/settings/PushNotifications'
 import { useHasFeature } from '@/hooks/useChains'
 import { FEATURES } from '@/utils/chains'
@@ -16,10 +15,8 @@ const NotificationsPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe{Wallet} – Settings – Notifications'}</title>
+        <title>{'SafeOS – Settings – Notifications'}</title>
       </Head>
-
-      <SettingsHeader />
 
       <main>
         <PushNotifications />
