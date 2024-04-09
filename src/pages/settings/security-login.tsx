@@ -8,10 +8,8 @@ const SecurityLoginPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe{Wallet} – Settings – Security & Login'}</title>
+        <title>{'SafeOS – Settings – Security & Login'}</title>
       </Head>
-
-      <SettingsHeader />
 
       <main>
         <SecurityLogin />
