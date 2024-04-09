@@ -4,11 +4,9 @@ import { Grid, LinearProgress } from '@mui/material'
 
 import type { BrowserPermission } from '@/hooks/safe-apps/permissions'
 import Slider from './Slider'
-import LegalDisclaimer from './LegalDisclaimer'
 import AllowedFeaturesList from './AllowedFeaturesList'
 import type { AllowedFeatures, AllowedFeatureSelection } from '../types'
 import { PermissionStatus } from '../types'
-import UnknownAppWarning from './UnknownAppWarning'
 import { getOrigin } from '../utils'
 
 type SafeAppsInfoModalProps = {
@@ -16,10 +14,7 @@ type SafeAppsInfoModalProps = {
   onConfirm: (shouldHide: boolean, browserPermissions: BrowserPermission[]) => void
   features: AllowedFeatures[]
   appUrl: string
-  isConsentAccepted?: boolean
   isPermissionsReviewCompleted: boolean
-  isSafeAppInDefaultList: boolean
-  isFirstTimeAccessingApp: boolean
 }
 
 const SafeAppsInfoModal = ({
@@ -27,10 +22,7 @@ const SafeAppsInfoModal = ({
   onConfirm,
   features,
   appUrl,
-  isConsentAccepted,
   isPermissionsReviewCompleted,
-  isSafeAppInDefaultList,
-  isFirstTimeAccessingApp,
 }: SafeAppsInfoModalProps): JSX.Element => {
   const [hideWarning, setHideWarning] = useState(false)
   const [selectedFeatures, setSelectedFeatures] = useState<AllowedFeatureSelection[]>(
@@ -46,20 +38,12 @@ const SafeAppsInfoModal = ({
   const totalSlides = useMemo(() => {
     let totalSlides = 0
 
-    if (!isConsentAccepted) {
-      totalSlides += 1
-    }
-
     if (!isPermissionsReviewCompleted) {
       totalSlides += 1
     }
 
-    if (!isSafeAppInDefaultList && isFirstTimeAccessingApp) {
-      totalSlides += 1
-    }
-
     return totalSlides
-  }, [isConsentAccepted, isFirstTimeAccessingApp, isPermissionsReviewCompleted, isSafeAppInDefaultList])
+  }, [isPermissionsReviewCompleted])
 
   const handleSlideChange = (newStep: number) => {
     const isFirstStep = newStep === -1
@@ -87,11 +71,6 @@ const SafeAppsInfoModal = ({
   const progressValue = useMemo(() => {
     return ((currentSlide + 1) * 100) / totalSlides
   }, [currentSlide, totalSlides])
-
-  const shouldShowUnknownAppWarning = useMemo(
-    () => !isSafeAppInDefaultList && isFirstTimeAccessingApp,
-    [isFirstTimeAccessingApp, isSafeAppInDefaultList],
-  )
 
   const handleFeatureSelectionChange = (feature: AllowedFeatures, checked: boolean) => {
     setSelectedFeatures(
@@ -135,16 +114,12 @@ const SafeAppsInfoModal = ({
         />
         <Grid container justifyContent="center" alignItems="center" direction="column" textAlign="center" p={3}>
           <Slider onSlideChange={handleSlideChange}>
-            {!isConsentAccepted && <LegalDisclaimer />}
-
             {!isPermissionsReviewCompleted && (
               <AllowedFeaturesList
                 features={selectedFeatures}
                 onFeatureSelectionChange={handleFeatureSelectionChange}
               />
             )}
-
-            {shouldShowUnknownAppWarning && <UnknownAppWarning url={origin} onHideWarning={setHideWarning} />}
           </Slider>
         </Grid>
       </Box>
