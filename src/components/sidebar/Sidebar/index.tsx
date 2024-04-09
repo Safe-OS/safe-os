@@ -2,7 +2,6 @@ import { useCallback, useState, type ReactElement } from 'react'
 import { Box, Divider, Drawer } from '@mui/material'
 import ChevronRight from '@mui/icons-material/ChevronRight'
 
-import ChainIndicator from '@/components/common/ChainIndicator'
 import SidebarHeader from '@/components/sidebar/SidebarHeader'
 
 import css from './styles.module.css'
@@ -25,8 +24,6 @@ const Sidebar = (): ReactElement => {
   return (
     <div data-testid="sidebar-container" className={css.container}>
       <div className={css.scroll}>
-        <ChainIndicator showLogo={false} />
-
         {/* Open the safes list */}
         <button data-testid="open-safes-icon" className={css.drawerButton} onClick={onDrawerToggle}>
           <ChevronRight />
