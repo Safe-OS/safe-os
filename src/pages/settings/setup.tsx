@@ -6,7 +6,6 @@ import { ContractVersion } from '@/components/settings/ContractVersion'
 import { OwnerList } from '@/components/settings/owner/OwnerList'
 import { RequiredConfirmation } from '@/components/settings/RequiredConfirmations'
 import useSafeInfo from '@/hooks/useSafeInfo'
-import SettingsHeader from '@/components/settings/SettingsHeader'
 import DelegatesList from '@/components/settings/DelegatesList'
 
 const Setup: NextPage = () => {
@@ -20,8 +19,6 @@ const Setup: NextPage = () => {
       <Head>
         <title>{'Safe{Wallet} – Settings – Setup'}</title>
       </Head>
-
-      <SettingsHeader />
 
       <main>
         <Paper data-testid="setup-section" sx={{ p: 4, mb: 2 }}>
