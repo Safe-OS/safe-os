@@ -62,6 +62,7 @@ const SettingsModal: React.FC<{
           <Tab label="Security & Login" />
           <Tab label="Notifications" />
           <Tab label="Modules" />
+          <Tab label="Safe Apps" />
           <Tab label="Data" />
           <Tab label="Environment variables" />
         </Tabs>
@@ -85,6 +86,9 @@ const SettingsModal: React.FC<{
           <SafeAppsPermissionsPage />
         </TabPanel>
         <TabPanel value={tab} index={6}>
+          <Data />
+        </TabPanel>
+        <TabPanel value={tab} index={7}>
           <EnvironmentVariablesPage />
         </TabPanel>
       </DialogContent>
