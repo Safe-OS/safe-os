@@ -1,10 +1,13 @@
 import ModalDialog from '@/components/common/ModalDialog'
 import React, { useState } from 'react'
-import ModulesPage from '@/components/floatingnavbar/SettingsPagesModal/ModulesPage'
-import SafeAppsPermissions from '@/components/settings/SafeAppsPermissions'
-import SpendingLimits from '@/components/settings/SpendingLimits'
-import DataManagement from '@/components/settings/DataManagement'
-import EnvironmentVariables from '@/components/settings/EnvironmentVariables'
+import Appearance from '@/pages/settings/appearance'
+import Setup from '@/pages/settings/setup'
+import SecurityLoginPage from '@/pages/settings/security-login'
+import NotificationsPage from '@/pages/settings/notifications'
+import Modules from '@/pages/settings/modules'
+import SafeAppsPermissionsPage from '@/pages/settings/safe-apps'
+import Data from '@/pages/settings/data'
+import EnvironmentVariablesPage from '@/pages/settings/environment-variables'
 import {
   DialogContent,
   Tab,
@@ -12,8 +15,6 @@ import {
   Box,
   Typography
 } from '@mui/material'
-import Appearance from '@/pages/settings/appearance'
-import Setup from '@/pages/settings/setup'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -58,9 +59,9 @@ const SettingsModal: React.FC<{
         <Tabs value={tab} onChange={handleChange} aria-label="folder tabs" variant="scrollable" scrollButtons="auto">
           <Tab label="Setup" />
           <Tab label="Appearance" />
+          <Tab label="Security & Login" />
+          <Tab label="Notifications" />
           <Tab label="Modules" />
-          <Tab label="Spending limits" />
-          <Tab label="Safe Apps permissions" />
           <Tab label="Data" />
           <Tab label="Environment variables" />
         </Tabs>
@@ -72,19 +73,19 @@ const SettingsModal: React.FC<{
           <Appearance />
         </TabPanel>
         <TabPanel value={tab} index={2}>
-          <ModulesPage />
+          <SecurityLoginPage />
         </TabPanel>
         <TabPanel value={tab} index={3}>
-          <SpendingLimits />
+          <NotificationsPage />
         </TabPanel>
         <TabPanel value={tab} index={4}>
-          <SafeAppsPermissions />
+          <Modules />
         </TabPanel>
         <TabPanel value={tab} index={5}>
-          <DataManagement />
+          <SafeAppsPermissionsPage />
         </TabPanel>
         <TabPanel value={tab} index={6}>
-          <EnvironmentVariables />
+          <EnvironmentVariablesPage />
         </TabPanel>
       </DialogContent>
     </ModalDialog>
