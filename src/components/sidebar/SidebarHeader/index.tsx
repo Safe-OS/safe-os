@@ -68,6 +68,10 @@ const SafeHeader = (): ReactElement => {
                 <Skeleton variant="text" width={120} />
               </Typography>
             )}
+          </div>
+        </div>
+
+        <Divider />
 
             <Typography data-testid="currency-section" variant="body2" fontWeight={700}>
               {safe.deployed ? (
@@ -80,10 +84,6 @@ const SafeHeader = (): ReactElement => {
                 />
               )}
             </Typography>
-          </div>
-        </div>
-
-        <Divider />
 
         <div className={css.iconButtons}>
           <Track {...OVERVIEW_EVENTS.SHOW_QR} label="sidebar">
