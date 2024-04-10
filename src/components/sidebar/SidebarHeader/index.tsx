@@ -72,8 +72,8 @@ const SafeHeader = (): ReactElement => {
         </div>
 
         <Divider />
-
-            <Typography data-testid="currency-section" variant="body2" fontWeight={700}>
+          <div>
+            <Typography data-testid="currency-section" variant="body2" fontWeight={700} fontSize={18}>
               {safe.deployed ? (
                 fiatTotal || <Skeleton variant="text" width={60} />
               ) : (
@@ -84,7 +84,10 @@ const SafeHeader = (): ReactElement => {
                 />
               )}
             </Typography>
-
+            <Typography>
+              Total asset value
+            </Typography>
+          </div>
         <div className={css.iconButtons}>
           <Track {...OVERVIEW_EVENTS.SHOW_QR} label="sidebar">
             <QrCodeButton>
