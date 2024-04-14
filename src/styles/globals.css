@@ -7,7 +7,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: DM Sans, sans-serif;
-  background: radial-gradient(circle at center, #76b852, #8DC26F, #a6c48a, #b8d5b8, #d8e9d8);
+  background-image: url("https://storage.googleapis.com/pai-images/2e7969de017d4d73b54c279f0f1ac017.jpeg");
+  background-size: cover;
 }
 
 main {
